@@ -1,0 +1,60 @@
+const seeder =() => {
+    const data = [
+        { id: 1, name: "Mohd Zahid", email: "zahid@example.com", phone: "1234567890", address: "123 Main St", category: "work" },
+        { id: 2, name: "Aarav Sharma", email: "aarav@example.com", phone: "2345678901", address: "456 Oak Ave", category: "family" },
+        { id: 3, name: "Priya Patel", email: "priya@example.com", phone: "3456789012", address: "789 Pine Rd", category: "friend" },
+        { id: 4, name: "Rahul Gupta", email: "rahul@example.com", phone: "4567890123", address: "101 Elm St", category: "work" },
+        { id: 5, name: "Ananya Singh", email: "ananya@example.com", phone: "5678901234", address: "202 Maple Dr", category: "family" },
+        { id: 6, name: "Vikram Joshi", email: "vikram@example.com", phone: "6789012345", address: "303 Cedar Ln", category: "work" },
+        { id: 7, name: "Neha Reddy", email: "neha@example.com", phone: "7890123456", address: "404 Birch Blvd", category: "friend" },
+        { id: 8, name: "Arjun Kumar", email: "arjun@example.com", phone: "8901234567", address: "505 Spruce Way", category: "work" },
+        { id: 9, name: "Ishaani Banerjee", email: "ishaani@example.com", phone: "9012345678", address: "606 Aspen Ct", category: "family" },
+        { id: 10, name: "Rohan Malhotra", email: "rohan@example.com", phone: "0123456789", address: "707 Redwood Pl", category: "friend" },
+        { id: 11, name: "Sanya Verma", email: "sanya@example.com", phone: "1234509876", address: "808 Willow St", category: "work" },
+        { id: 12, name: "Kabir Khanna", email: "kabir@example.com", phone: "2345610987", address: "909 Magnolia Ave", category: "family" },
+        { id: 13, name: "Diya Iyer", email: "diya@example.com", phone: "3456721098", address: "111 Palm Dr", category: "friend" },
+        { id: 14, name: "Ayaan Choudhary", email: "ayaan@example.com", phone: "4567832109", address: "222 Sequoia Ln", category: "work" },
+        { id: 15, name: "Myra Saxena", email: "myra@example.com", phone: "5678943210", address: "333 Juniper Rd", category: "family" },
+        { id: 16, name: "Vivaan Agarwal", email: "vivaan@example.com", phone: "6789054321", address: "444 Sycamore Blvd", category: "friend" },
+        { id: 17, name: "Kiara Nair", email: "kiara@example.com", phone: "7890165432", address: "555 Acacia Way", category: "work" },
+        { id: 18, name: "Aditya Rao", email: "aditya@example.com", phone: "8901276543", address: "666 Olive Ct", category: "family" },
+        { id: 19, name: "Anika Mehra", email: "anika@example.com", phone: "9012387654", address: "777 Cypress Pl", category: "friend" },
+        { id: 20, name: "Shaurya Bajaj", email: "shaurya@example.com", phone: "0123498765", address: "888 Poplar St", category: "work" },
+        { id: 21, name: "Trisha Sengupta", email: "trisha@example.com", phone: "1234567890", address: "999 Spruce Ave", category: "family" },
+        { id: 22, name: "Reyansh Chawla", email: "reyansh@example.com", phone: "2345678901", address: "1010 Pine Dr", category: "friend" },
+        { id: 23, name: "Meera Kapoor", email: "meera@example.com", phone: "3456789012", address: "1111 Elm Ln", category: "work" },
+        { id: 24, name: "Aadi Desai", email: "aadi@example.com", phone: "4567890123", address: "1212 Maple Rd", category: "family" },
+        { id: 25, name: "Zara Oberoi", email: "zara@example.com", phone: "5678901234", address: "1313 Cedar Blvd", category: "friend" },
+        { id: 26, name: "Virat Kohli", email: "virat@example.com", phone: "6789012345", address: "1414 Birch Way", category: "work" },
+        { id: 27, name: "Deepika Padukone", email: "deepika@example.com", phone: "7890123456", address: "1515 Aspen Ct", category: "family" },
+        { id: 28, name: "Ranveer Singh", email: "ranveer@example.com", phone: "8901234567", address: "1616 Redwood Pl", category: "friend" },
+        { id: 29, name: "Alia Bhatt", email: "alia@example.com", phone: "9012345678", address: "1717 Willow St", category: "work" },
+        { id: 30, name: "Shah Rukh Khan", email: "srk@example.com", phone: "0123456789", address: "1818 Magnolia Ave", category: "family" },
+        { id: 31, name: "Priyanka Chopra", email: "priyanka@example.com", phone: "1234509876", address: "1919 Palm Dr", category: "friend" },
+        { id: 32, name: "Akshay Kumar", email: "akshay@example.com", phone: "2345610987", address: "2020 Sequoia Ln", category: "work" },
+        { id: 33, name: "Kareena Kapoor", email: "kareena@example.com", phone: "3456721098", address: "2121 Juniper Rd", category: "family" },
+        { id: 34, name: "Salman Khan", email: "salman@example.com", phone: "4567832109", address: "2222 Sycamore Blvd", category: "friend" },
+        { id: 35, name: "Katrina Kaif", email: "katrina@example.com", phone: "5678943210", address: "2323 Acacia Way", category: "work" },
+        { id: 36, name: "Hrithik Roshan", email: "hrithik@example.com", phone: "6789054321", address: "2424 Olive Ct", category: "family" },
+        { id: 37, name: "Aishwarya Rai", email: "aishwarya@example.com", phone: "7890165432", address: "2525 Cypress Pl", category: "friend" },
+        { id: 38, name: "Ranbir Kapoor", email: "ranbir@example.com", phone: "8901276543", address: "2626 Poplar St", category: "work" },
+        { id: 39, name: "Anushka Sharma", email: "anushka@example.com", phone: "9012387654", address: "2727 Spruce Ave", category: "family" },
+        { id: 40, name: "Varun Dhawan", email: "varun@example.com", phone: "0123498765", address: "2828 Pine Dr", category: "friend" },
+        { id: 41, name: "Sara Ali Khan", email: "sara@example.com", phone: "1234567890", address: "2929 Elm Ln", category: "work" },
+        { id: 42, name: "Ayushmann Khurrana", email: "ayushmann@example.com", phone: "2345678901", address: "3030 Maple Rd", category: "family" },
+        { id: 43, name: "Jacqueline Fernandez", email: "jacqueline@example.com", phone: "3456789012", address: "3131 Cedar Blvd", category: "friend" },
+        { id: 44, name: "Tiger Shroff", email: "tiger@example.com", phone: "4567890123", address: "3232 Birch Way", category: "work" },
+        { id: 45, name: "Disha Patani", email: "disha@example.com", phone: "5678901234", address: "3333 Aspen Ct", category: "family" },
+        { id: 46, name: "Kartik Aaryan", email: "kartik@example.com", phone: "6789012345", address: "3434 Redwood Pl", category: "friend" },
+        { id: 47, name: "Kiara Advani", email: "kiara.advani@example.com", phone: "7890123456", address: "3535 Willow St", category: "work" },
+        { id: 48, name: "Sidharth Malhotra", email: "sidharth@example.com", phone: "8901234567", address: "3636 Magnolia Ave", category: "family" },
+        { id: 49, name: "Janhvi Kapoor", email: "janhvi@example.com", phone: "9012345678", address: "3737 Palm Dr", category: "friend" },
+        { id: 50, name: "Ishaan Khatter", email: "ishaan@example.com", phone: "0123456789", address: "3838 Sequoia Ln", category: "work" }
+    ]
+    
+    
+    localStorage.setItem('CONTACTS', JSON.stringify(data))
+    console.log('Data seeded successfully!')
+}
+
+export default seeder;

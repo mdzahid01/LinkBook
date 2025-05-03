@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { FaPlusSquare } from "react-icons/fa";
+
 /**
  * Button Component
  *
@@ -21,7 +23,7 @@ const Button = ({ btnText, func, clsname = '', type = 'button', ...rest }) => {
       type={type}
       {...rest}
     >
-      {btnText}
+      <FaPlusSquare  />
     </button>
   );
 };

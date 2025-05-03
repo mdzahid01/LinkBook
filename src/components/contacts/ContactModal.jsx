@@ -61,6 +61,8 @@ const ContactModal = ({ mode, initialValue, onSubmit, onClose }) => {
             value={values.name}
             onChange={handleChange}
             placeholder="Name"
+            autoComplete='name'
+            autoFocus
           />
           {errors.name && <p className="error">{errors.name}</p>}
 
@@ -71,6 +73,7 @@ const ContactModal = ({ mode, initialValue, onSubmit, onClose }) => {
             value={values.email}
             onChange={handleChange}
             placeholder="Email"
+            autoComplete='email'
           />
           {errors.email && <p className="error">{errors.email}</p>}
 
@@ -81,6 +84,7 @@ const ContactModal = ({ mode, initialValue, onSubmit, onClose }) => {
             value={values.address}
             onChange={handleChange}
             placeholder="Address"
+            autoComplete ="address-line1"
           />
           {errors.address && <p className="error">{errors.address}</p>}
 
@@ -91,6 +95,7 @@ const ContactModal = ({ mode, initialValue, onSubmit, onClose }) => {
             value={values.phone}
             onChange={handleChange}
             placeholder="Phone Number"
+            autoComplete='tel'
           />
           {errors.phone && <p className="error">{errors.phone}</p>}
 

@@ -68,12 +68,14 @@ const ContactList = () => {
         </div>
         {filteredContacts && filteredContacts.length > 0 ? (
             <div className="contact-list-container">
+                {/* https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript */}
             {[...filteredContacts].sort((a,b)=>a.name.localeCompare(b.name)).map((contact) => (
                 <ContactBody 
                     key={contact.id}
                     contact={contact}
-                    onClick={() => handleContactClick(contact)} 
+                    // onClick={() => handleContactClick(contact)} 
                     onDelete={() => handleDeleteClick(contact)}
+                    contactClick  = {handleContactClick}
                 />
             ))}
         </div>

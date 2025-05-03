@@ -104,6 +104,13 @@
     background-color: #e2e8f0;
   }
   
+.error{
+    color: red;
+    font-size: 0.8rem;
+    margin-top: -1rem;
+  }
+
+
   /* Animations */
   @keyframes fadeIn {
     from { opacity: 0; }

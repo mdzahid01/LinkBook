@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://linkbook.com",
+  "homepage": "https://mdzahid01.github.io/LinkBook",
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

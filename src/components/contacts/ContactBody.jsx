@@ -14,7 +14,7 @@ const ContactBody = ({ contact, onDelete, contactClick }) => {
   return (
     <div className="contact-body">
         <div className="credential-container">
-            <span className='span-name'>{ truncateText(contact.name) }</span>
+            <span className='span-name'>{ truncateText(contact.name,18) }</span>
             <span className="span-email">{ truncateText(contact.email,18) }</span>
         </div>
         <div className="icon-container">

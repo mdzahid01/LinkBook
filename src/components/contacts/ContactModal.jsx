@@ -44,7 +44,7 @@ const ContactModal = ({ mode, initialValue, onSubmit, onClose }) => {
     validate,
     onSubmit: (formValues) => {
       console.log('Form submitted:', formValues);
-      onSubmit(formValues);
+      onSubmit(formValues); // Call the onSubmit prop with the form values
     }
   });
 

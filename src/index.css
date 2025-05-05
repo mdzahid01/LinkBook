@@ -1,107 +1,94 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+
+:root {
+  --bg-color: #c9c9c9;
+  --text-color: #1a1a1a;
+  --primary-color: #2F3C7E;
+  --secondary-bg: #f0f0f0;
+  --border-color: #e0e0e0;
+  --card-bg: #ffffff;
+  --input-bg: #f8fafc;
+  --hover-bg: #eaeaea;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --primary-color: #2F3C7E;
+  --secondary-bg: #2d2d2d;
+  --border-color: #444;
+  --card-bg: #2c2c2c;
+  --input-bg: #3b3b3b;
+  --hover-bg: #444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
 }
 
-body{
-  /* for dark mode */
-  background-color: rgb(53, 52, 52);
-
-  /* for light mode */
-  /* background-color: rgb(196, 196, 196);  */
-
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.header{
+.header, .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  color: #46484f;
-  color: white;;
+  color: white;
   font-weight: 700;
   font-size: 1.8rem;
-  background-color: rgba(82, 82, 244);
+  background-color: var(--primary-color);
+}
+
+.footer {
+  justify-content: center;
+  font-size: 1.2rem;
 }
 
 .dark-mode-icon {
-  width: 40px;     /* Increase to make bigger */
-  height: 40px;    /* Match proportionally */
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .dark-mode-icon:hover {
-  transform: scale(1.1); /* Optional: small hover effect */
+  transform: scale(1.1);
 }
-
-.footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  color: white;
-  font-size: 1.2rem;
-  background-color: rgba(82, 82, 244);
-}
-
-
 
 /* Small mobile phones */
 @media (max-width: 756px) {
-  /* Styles for very small devices */
-  .header{
+  .header, .footer {
     font-size: 1rem;
   }
-  .footer{
-    font-size: 1.2rem;
-  }
+
   .dark-mode-icon {
-    width: 30px;     /* Increase to make bigger */
-    height: 30px;    /* Match proportionally */
+    width: 30px;
+    height: 30px;
   }
 
-  .btn{
+  .btn {
     font-size: 0.8rem;
-    padding: .3rem;
-  }
-  .icon{
-    width: 25px;     /* Increase to make bigger */
-    height: 25px;    /* Match proportionally */
+    padding: 0.3rem;
   }
 
-  .span-email{
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .span-email {
     font-size: 0.8rem;
   }
-  .credential-container{
-    /* gap: 0.5rem; */
-  }
-  .icon-container{
-    /* gap: 0.5rem; */
-  }
-  .icon-delete{
-    /* gap: 0.5rem; */
-  }
 }
 
-/* Large mobiles and small tablets */
-@media (max-width: 767px) {
-  /* Styles for mobile and phablets */
-}
-
-/* Tablets */
-@media (max-width: 1024px) {
-  /* Styles for tablets */
-}
-
-/* Laptops */
-@media (max-width: 1280px) {
-  /* Styles for laptops */
-}
-
-/* Big desktops */
-@media (min-width: 1281px) {
-  /* Styles for big screens */
-}
+/* Responsive layout placeholders */
+@media (max-width: 767px) {}
+@media (max-width: 1024px) {}
+@media (max-width: 1280px) {}
+@media (min-width: 1281px) {}

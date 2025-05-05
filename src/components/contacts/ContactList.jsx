@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
+
 import SearchBar from '../UI/SearchBar'
 import Button from '../UI/Button'
 import ContactBody from './ContactBody'
 import ContactModal from './ContactModal'
-// import seeder from '../../../ContactDetailsSeeder'
+import seeder from '../../../ContactDetailsSeeder'
 const ContactList = () => {
     const [isOpen ,setIsOpen]= useState(false);
     const [contacts, setContacts] = useState(localStorage.getItem('CONTACTS')? JSON.parse(localStorage.getItem('CONTACTS')) : []);
@@ -46,7 +47,7 @@ const ContactList = () => {
     <div className='contact-list'>
         <div className="contact-list-header">
             <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
-            {/* <button onClick={()=> seeder()}>seed data</button> */}
+            <button onClick={()=> seeder()}>seed data</button>
             {/* <button onClick={()=>{console.log(filteredContacts); console.log("clicked")}}>filteredDAta</button> */}
             <select name="category" id="category" className='category-select' onChange={(e) => setCategory(e.target.value)} value={category}>
                 <option value="all">All</option>
@@ -91,12 +92,24 @@ const ContactList = () => {
                 mode ={selectedContact ? 'edit' : 'add'}
                 initialValue={selectedContact || {}}
                 onSubmit={(data) => {
+                    let stopFunctionExecution = false;
                 if (selectedContact) {
                     setContacts((contacts.map((contact) =>
                                 contact.id === selectedContact.id ? {...data,id:selectedContact.id} : contact
                             )
                         ));
                     } else {
+                        contacts.map((contact) => {
+                            const isDuplicate = contact.email.toLowerCase() === data.email.toLowerCase() || contact.phone === data.phone;
+                            if (isDuplicate) {
+                                stopFunctionExecution= true;
+                            }
+                            
+                        })
+                        if (stopFunctionExecution) {
+                            alert('Contact with this email or Phone already exists!');
+                            return
+                        };
                         setContacts([...contacts, {...data,id: uuidv4()}]);
                     }
                     setIsOpen(false);

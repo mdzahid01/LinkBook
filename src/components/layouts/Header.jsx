@@ -1,22 +1,18 @@
 import { useState } from 'react'
 import darkLogo from '../../assets/dark_mode_icon.svg'
+import { MdLightMode , MdDarkMode } from "react-icons/md";
 import lightLogo from '../../assets/light_mode_icon.svg'
-
+import { useTheme } from '../../contexts/ThemeContext'
 const Header = () => {
-    const [darkMode, setDarkMode] = useState(false)
+  const  {isDarkMode, toggleTheme} = useTheme();
 
-    const toggleTheme = () => { 
-        alert('This feature is not implemented yet')
-        setDarkMode(!darkMode)
-    }
   return (
     <div className='header'>
         <div>LinkBook</div> 
-
-        <img src={darkMode ? lightLogo : darkLogo} 
+        <div
         className="dark-mode-icon" 
         alt="Toggle theme"
-        onClick={toggleTheme} />
+        onClick={toggleTheme} >{isDarkMode? <MdDarkMode size={30} color='#ffae00 '/>: <MdLightMode size={30} color='#ffffff'/>} </div>
 
     </div>
   )

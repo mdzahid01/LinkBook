@@ -24,3 +24,24 @@
   opacity: 1;
   visibility: visible;
 }
+
+.select-checkbox {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--primary-color); /* For modern browsers */
+  z-index: 1;
+}
+
+/* Adjust for smaller devices */
+@media screen and (max-width: 768px) {
+  .select-checkbox {
+    width: 16px;
+    height: 16px;
+    left: 0.5rem;
+  }
+}

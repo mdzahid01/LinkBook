@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: .5rem;
   margin-bottom: 2rem;
   min-width: 90vw;
   max-width: 50%;
@@ -35,6 +35,13 @@
   transform: scale(1.01);
 }
 
+.contact-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .contact-checkbox {
   position: absolute;
   left: 0.5rem;
@@ -45,6 +52,7 @@
 .credential-container {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .icon-container {
@@ -55,7 +63,7 @@
   gap: 1rem;
 }
 
-.icon-delete {
+.icon-delete, .icon-view {
   background-color: transparent;
   border: none;
 }
@@ -146,6 +154,32 @@ option:hover {
   height: 70vh;
 }
 
+.multiple-selection-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  border-radius: 5px;
+  padding:  0 2rem;
+  min-height: 35px;
+  margin: auto;
+  width: 90vw;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+
+.multiple-selection-row .btn {
+  background-color: red;
+  padding: .4rem;
+}
+
+.multiple-selection-row .label {
+  margin: 0 3px;
+}
+
+
 /* Mobile View */
 @media screen and (max-width: 768px) {
   .contact-list-header {
@@ -168,6 +202,7 @@ option:hover {
     font-size: 1.2rem;
     padding: 0.5em 1rem;
     width: 390px;
+    overflow-x: scroll;
   }
 
   .span-name, .span-email {
@@ -199,5 +234,11 @@ option:hover {
 
   .icon-container, .icon-delete {
     gap: 0.3rem;
+  }
+
+  .multiple-selection-row .btn {
+    font-size: .7rem;
+    padding: 0.3rem;
+    color: var(--text-color);
   }
 }

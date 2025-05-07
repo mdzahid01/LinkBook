@@ -63,10 +63,10 @@
 }
 
 .modal-buttons {
+  grid-area: modal-buttons;
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  margin-top: 1rem;
 }
 
 .modal-buttons button {
@@ -98,6 +98,23 @@
   background-color: var(--hover-bg);
 }
 
+.btnAndIcon-container{
+  display: grid;
+  margin-top: 1rem;
+  grid-template-areas: "icon-container modal-buttons";
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-container {
+  grid-area: icon-container;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .error {
   color: red;
   font-size: 0.8rem;
@@ -120,17 +137,30 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .modal {
     padding: 1.5rem;
   }
 
+  .btnAndIcon-container {
+    display: grid;
+    grid-template-areas: 
+      "icon-container"
+      "modal-buttons";
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+.icon-container {
+    justify-content: space-around;
+  }
   .modal-buttons {
     flex-direction: column-reverse;
     gap: 0.8rem;
   }
 
   .modal-buttons button {
-    width: 100%;
+    /* width: 100%; */
   }
 }

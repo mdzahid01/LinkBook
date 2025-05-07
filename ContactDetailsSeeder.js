@@ -1,3 +1,5 @@
+// import { setContacts } from "./src/components/contacts/ContactList"
+
 const seeder =() => {
     const data = [
         { id: 1, name: "Mohd Zahid", email: "zahid@example.com", phone: "1234567890", address: "123 Main St", category: "work" },

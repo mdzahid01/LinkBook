@@ -10,40 +10,48 @@ const truncateText = (text, maxLength = 12) => {
   }
   
 
-const ContactBody = ({ contact, onDelete, contactClick }) => {
+const ContactBody = ({ contact, onDelete, contactClick, onSelect, ischecked }) => {
   return (
     <div className="contact-body">
-        <div className="credential-container">
-            <span className='span-name'>{ truncateText(contact.name,18) }</span>
-            <span className="span-email">{ truncateText(contact.email,18) }</span>
+        <div className="contact-info">
+        <input
+          type="checkbox"
+          className="select-checkbox"
+          id={`checkbox-${contact.id}`}
+          onChange={(e) => {onSelect(contact.id)}}
+          checked={ischecked}
+        //   onClick={(e) => e.stopPropagation()}
+        />
+            <div className="credential-container">
+            <span className='span-name'>{ truncateText(contact.name,50) }</span>
+            <span className="span-email">{ truncateText(contact.email,50) }</span>
+            </div>
         </div>
         <div className="icon-container">
 
-            <a href={`tel:${contact.phone}`} className="icon icon-phone" onClick={(e) => e.stopPropagation()}>
-                <MdPhone size={15} color="#3e3ee3" />
-            </a>
-            <a href={`mailto:${contact.email}`} className="icon icon-email" onClick={(e) => e.stopPropagation()}>
-                <FaEnvelope size={15} color="#FF5733" />
-            </a>
-            <a href={`https://wa.me/91${contact.phone}`} className="icon icon-whatsapp" onClick={(e) => e.stopPropagation()}>
-                <FaWhatsapp size={15} color="#4CAF50" />
-            </a>
+        
 
-            <a className="icon icon-delete" onClick={(e) => {
+            <span className="icon icon-view"
+            role='button'
+            tabIndex={0}
+            onClick={(e) => {
                 e.stopPropagation()
                 contactClick(contact)
                 console.log('view contact clicked')
             }}>
                 <GrView  size={15} color='#0b9ff3'/>
-            </a>
+            </span>
 
-            <a  href='' className="icon icon-delete" onClick={(e) => {
+            <span className="icon icon-delete"  role='button'
+            tabIndex={0}
+            onClick={(e) => {
+                e.preventDefault()
                 e.stopPropagation()
                 onDelete(contact)
                 console.log('Delete contact clicked')
             }}>
                 <FaTrashAlt  size={15} color='#e80000'/>
-            </a>
+            </span>
             
         </div>
     </div>

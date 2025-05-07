@@ -242,7 +242,7 @@ option:hover {
   }
   .multiple-selection-row .btn {
     font-size: .7rem;
-    padding: 0 1rem;
+    padding: .4rem;
     color: var(--text-color);
   }
 }

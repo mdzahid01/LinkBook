@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,8 +20,8 @@
     <link rel="icon" type="image/svg+xml" href="/LinkBook/assets/favicon-Cwg7ZyEI.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LinkBook - A Contact App</title>
-    <script type="module" crossorigin src="/LinkBook/assets/index-BA1KYOEP.js"></script>
-    <link rel="stylesheet" crossorigin href="/LinkBook/assets/index-Ct4hmn8m.css">
+    <script type="module" crossorigin src="/LinkBook/assets/index-JM6eK2Kh.js"></script>
+    <link rel="stylesheet" crossorigin href="/LinkBook/assets/index-DdhtKkKg.css">
   </head>
   <body>
     <div id="root"></div>

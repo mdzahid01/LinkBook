@@ -25,9 +25,9 @@ function useForm({initialValues, onSubmit, validate}) {
     setErrors({});
   }
 
-//   useEffect(() => {
-//     setValues(initialValues);
-//   }, [initialValues]);
+  useEffect(() => {
+    setValues(initialValues);
+  }, [initialValues]);
 
     return {
         values,

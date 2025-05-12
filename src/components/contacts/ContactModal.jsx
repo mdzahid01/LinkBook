@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useForm from "../../hooks/useForm";
 import { FaWhatsapp, FaEnvelope, FaTrashAlt } from "react-icons/fa";
 import { MdPhone } from "react-icons/md";
@@ -30,15 +30,24 @@ function validate(values) {
 }
 
 const ContactModal = ({ mode, initialValue, onSubmit, onClose }) => {
-  const { values, errors, handleChange, handleSubmit, handleReset } = useForm({
-    initialValues: {
+
+  //this one is for memoizing the initialValues so that it doesn't get re-initialized on every render
+  // this is important because if we don't do this, the initialValues will be re-initialized on every render and the form will not work as expected.
+  const memoizedInitialValues = React.useMemo(
+    () => ({
       name: initialValue?.name || "",
       email: initialValue?.email || "",
       phone: initialValue?.phone || "",
       address: initialValue?.address || "",
       category: initialValue?.category || "",
-    },
-    validate,
+    }),
+    [initialValue]
+  );
+
+
+  const { values, errors, handleChange, handleSubmit, handleReset } = useForm({
+    initialValues: memoizedInitialValues,
+    validate: validate,
     onSubmit: (formValues) => {
       console.log("Form submitted:", formValues);
       onSubmit(formValues); // Call the onSubmit prop with the form values
@@ -112,40 +121,42 @@ const ContactModal = ({ mode, initialValue, onSubmit, onClose }) => {
           </select>
           {errors.category && <p className="error">{errors.category}</p>}
 
-         <div className="btnAndIcon-container">
-         {mode === "edit" && (
-          <div className="icon-container">
-          <a
-             href={`tel:${initialValue.phone}`}
-             className="icon icon-phone"
-             onClick={(e) => e.stopPropagation()}
-           >
-             <MdPhone size={20} color="#3e3ee3" />
-           </a>
-           <a
-             href={`mailto:${initialValue.email}`}
-             className="icon icon-email"
-             onClick={(e) => e.stopPropagation()}
-           >
-             <FaEnvelope size={20} color="#FF5733" />
-           </a>
-           <a
-             href={`https://wa.me/91${initialValue.phone}`}
-             className="icon icon-whatsapp"
-             onClick={(e) => e.stopPropagation()}
-           >
-             <FaWhatsapp size={20} color="#4CAF50" />
-           </a>
-          </div>
-         )}
+          <div className="btnAndIcon-container">
+            {mode === "edit" && (
+              <div className="icon-container">
+                <a
+                  href={`tel:${initialValue.phone}`}
+                  className="icon icon-phone"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <MdPhone size={20} color="#3e3ee3" />
+                </a>
+                <a
+                  href={`mailto:${initialValue.email}`}
+                  className="icon icon-email"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <FaEnvelope size={20} color="#FF5733" />
+                </a>
+                <a
+                  href={`https://wa.me/91${initialValue.phone}`}
+                  className="icon icon-whatsapp"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <FaWhatsapp size={20} color="#4CAF50" />
+                </a>
+              </div>
+            )}
 
-          <div className="modal-buttons">
-            <button type="submit">{mode === "edit" ? "Update" : "Add"}</button>
-            <button type="button" onClick={onClose}>
-              Cancel
-            </button>
+            <div className="modal-buttons">
+              <button type="submit">
+                {mode === "edit" ? "Update" : "Add"}
+              </button>
+              <button type="button" onClick={onClose}>
+                Cancel
+              </button>
+            </div>
           </div>
-         </div>
         </form>
       </div>
     </div>

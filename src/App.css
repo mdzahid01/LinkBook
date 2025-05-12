@@ -2,10 +2,11 @@
 .contact-list-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content:flex-start;
+  align-items: flex-start;
   margin-top: .5rem;
   margin-bottom: 2rem;
+  min-height: 65vh;
   min-width: 90vw;
   max-width: 50%;
   margin-right: auto;
@@ -22,6 +23,8 @@
   max-width: 50%;
   border-radius: 5px;
   margin: auto;
+  margin-top: 0.1rem;
+  margin-bottom: .1rem;
   color: var(--text-color);
   font-size: 1.8rem;
   padding: 0.1rem 2rem;

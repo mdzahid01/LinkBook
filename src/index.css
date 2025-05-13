@@ -34,6 +34,36 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+
+/* Customize the scrollbar itself */
+::-webkit-scrollbar {
+  width: 10px;  /* Horizontal scrollbar width */
+  height: 12px; /* Vertical scrollbar height */
+}
+
+/* Customize the thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background-color: var( --secondary-bg); /* Thumb color */
+  border-radius: 10px;     /* Rounded corners for thumb */
+}
+
+/* Customize the thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var( --primary-color);  /* Darker thumb color when hovered */
+}
+
+/* Customize the track (the part the thumb slides in) */
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color); /* Track color */
+       /* Rounded corners for track */
+}
+
+/* Customize the track when hovered */
+::-webkit-scrollbar-track:hover {
+  background-color: var( --input-bg);    /* Track color when hovered */
+}
+
+
 .header, .footer {
   display: flex;
   justify-content: space-between;

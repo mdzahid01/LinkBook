@@ -7,14 +7,14 @@ const Header = () => {
   const  {isDarkMode, toggleTheme} = useTheme();
 
   return (
-    <div className='header'>
+    <header className='header'>
         <div>LinkBook</div> 
         <div
         className="dark-mode-icon" 
         alt="Toggle theme"
         onClick={toggleTheme} >{isDarkMode? <MdDarkMode size={30} color='#ffae00 '/>: <MdLightMode size={30} color='#ffffff'/>} </div>
 
-    </div>
+    </header>
   )
 }
 

@@ -11,7 +11,7 @@
   max-width: 50%;
   margin-right: auto;
   margin-left: auto;
-  gap: 0.3rem;
+  /* gap: 0.3rem; */
 }
 
 .contact-body {
@@ -157,6 +157,18 @@ option:hover {
   height: 70vh;
 }
 
+.no-contacts-title{
+  font-size: 3.5rem;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.no-contacts-text{
+  font-size: 1.5rem;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
 .multiple-selection-row {
   display: flex;
   justify-content: space-between;
@@ -247,5 +259,13 @@ option:hover {
     font-size: .7rem;
     padding: .4rem;
     color: var(--text-color);
+  }
+
+  .no-contacts-title{
+    font-size: 1.7rem;
+  }
+
+  .no-contacts-text{
+  font-size: 1.2rem;
   }
 }

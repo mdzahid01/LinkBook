@@ -5,10 +5,25 @@ function useForm({initialValues, onSubmit, validate}) {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
 
+  // Handle input changes - version 1
+  // const handleChange = (event) => {
+  //   const { name, value ,type } = event.target;
+  //   if (type === 'checkbox') {
+  //     setValues((prevValues) => ({ ...prevValues, [name]: event.target.checked }));
+  //     return;
+  //   }
+  //   setValues((prevValues) => ({ ...prevValues, [name]: value }));
+  // }
+
+  // Handle input changes - version 2
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setValues((prevValues) => ({ ...prevValues, [name]: value }));
+    const { name, value, type, checked } = event.target;
+    const newValue  = type === 'checkbox' ? checked : value;
+    setValues((prevValues) => ({ ...prevValues, [name]: newValue }));
   }
+  
+
+
 
   const handleSubmit = (event) => {
     event.preventDefault();

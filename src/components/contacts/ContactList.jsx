@@ -96,14 +96,14 @@ const ContactList = () => {
     <div className="contact-list">
       <div className="contact-list-header">
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-        {/* <button
+        <button
           onClick={() => {
             seeder();
             location.reload();
           }}
         >
-          seed data
-        </button> */}
+          Dummy Data
+        </button>
         {/* <button onClick={()=>{console.log(filteredContacts); console.log("clicked")}}>filteredDAta</button> */}
         <select
           name="category"
